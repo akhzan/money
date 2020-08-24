@@ -10,11 +10,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/home/screens/home.dart';
+import '../../features/transactions/screens/transactions.dart';
 
 class Routes {
   static const String home = '/';
+  static const String transactions = 'transactions';
   static const all = <String>{
     home,
+    transactions,
   };
 }
 
@@ -23,6 +26,7 @@ class Router extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.home, page: Home),
+    RouteDef(Routes.transactions, page: Transactions),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -33,6 +37,15 @@ class Router extends RouterBase {
       );
       return MaterialPageRoute<dynamic>(
         builder: (context) => Home(key: args.key),
+        settings: data,
+      );
+    },
+    Transactions: (data) {
+      final args = data.getArgs<TransactionsArguments>(
+        orElse: () => TransactionsArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => Transactions(key: args.key),
         settings: data,
       );
     },
@@ -47,4 +60,10 @@ class Router extends RouterBase {
 class HomeArguments {
   final Key key;
   HomeArguments({this.key});
+}
+
+/// Transactions arguments holder class
+class TransactionsArguments {
+  final Key key;
+  TransactionsArguments({this.key});
 }
