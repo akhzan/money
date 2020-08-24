@@ -23,7 +23,7 @@ class _AppState extends State<App> {
       title: 'Flutter Demo',
       builder: ExtendedNavigator.builder(
           router: Router(),
-          initialRoute: Home.PATH,
+          initialRoute: Routes.home,
           builder: (ctx, extendedNav) => Theme(
                 data: ThemeData.dark(),
                 child: extendedNav,

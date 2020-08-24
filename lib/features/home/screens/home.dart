@@ -1,9 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:money/features/transactions/screens/transactions.dart';
+import 'package:money/core/router/router.gr.dart';
 
 class Home extends StatefulWidget {
-  static const String PATH = '/';
   Home({Key key}) : super(key: key);
 
   @override
@@ -21,7 +20,7 @@ class _HomeState extends State<Home> {
             Text('Home'),
             FlatButton(
                 onPressed: () =>
-                    ExtendedNavigator.of(context).push(Transactions.PATH),
+                    ExtendedNavigator.of(context).push(Routes.transactions),
                 child: Text('Go to transactions'))
           ],
         ),

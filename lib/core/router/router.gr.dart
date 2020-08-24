@@ -14,7 +14,7 @@ import '../../features/transactions/screens/transactions.dart';
 
 class Routes {
   static const String home = '/';
-  static const String transactions = 'transactions';
+  static const String transactions = '/Transactions';
   static const all = <String>{
     home,
     transactions,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Transactions extends StatefulWidget {
-  static const String PATH = 'transactions';
   Transactions({Key key}) : super(key: key);
 
   @override
